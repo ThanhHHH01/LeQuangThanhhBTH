@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Demo.Models;
+using LeQuangThanhBTH.Models;
 
-namespace Demo.Controllers;
+namespace LeQuangThanhBTH.Controllers;
 
 public class HomeController : Controller
 {
@@ -22,7 +22,12 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    [HttpPost]
+    public IActionResult Index(string Fullname, string Email)
+    {
+        ViewBag.name = "Hello " + Fullname + " Email là " + Email;
+        return View();
+    }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
