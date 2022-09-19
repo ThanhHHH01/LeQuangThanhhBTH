@@ -1,0 +1,22 @@
+<table class="table border">
+    <tr>
+        <th>
+            <label>Person Id</label>
+        </th>
+        <th>
+            <label>Person Name</label>
+        </th>
+        <th>
+            <label>Person Age</label>
+        </th>
+    </tr>
+
+    @foreach (var item in ViewData["Person"] as List<Person>)
+    {
+        <tr>
+            <td>@item.PersonID</td>
+            <td>@item.PersonName</td>
+            <td>@item.PersonAge</td>
+        </tr>
+    }
+</table>
